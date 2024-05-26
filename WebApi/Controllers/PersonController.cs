@@ -27,7 +27,12 @@ public class PersonController : ControllerBase
             return Ok("No persons found.");
         }
         
-        return await _context.Persons.ToListAsync();
+        return Ok(persons.ToList().Select(p => new
+        {
+            uuid = p.uuid,
+            Name = p.Name,
+            Age = p.Age
+        }));
     }
 
     [HttpGet("/{id}")]
