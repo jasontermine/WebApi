@@ -10,5 +10,7 @@ namespace WebApi.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<EmployeeAssignment> EmployeeAssignments { get; set; }
     }
 }
