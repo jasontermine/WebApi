@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace WebApi.Models;
 
-public class Person
+public class Employee
 {
     [Key]    
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -12,8 +12,11 @@ public class Person
     public Guid uuid { get; set; }
     
     [Required]
-    public string Name { get; set; }
-    
+    public string FirstName { get; set; }
+
+    [Required]
+    public string LastName { get; set; }
+
     [Required, Range(1, 120)]
     public int Age { get; set; }
 }

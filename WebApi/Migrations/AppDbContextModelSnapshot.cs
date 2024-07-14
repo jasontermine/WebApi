@@ -22,24 +22,7 @@ namespace WebApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApi.Models.MyEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MyEntities");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Person", b =>
+            modelBuilder.Entity("WebApi.Models.Employee", b =>
                 {
                     b.Property<Guid>("uuid")
                         .ValueGeneratedOnAdd()
@@ -48,13 +31,17 @@ namespace WebApi.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("uuid");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Employees");
                 });
 #pragma warning restore 612, 618
         }

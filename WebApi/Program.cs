@@ -31,28 +31,29 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/persons", (AppDbContext db) =>
+app.MapGet("/employees", (AppDbContext db) =>
     {
-        var persons = db.Persons.ToList();
+        var employees = db.Employees.ToList();
 
-        return persons;
+        return employees;
     })
-    .WithName("GetPersons")
+    .WithName("GetEmployees")
     .WithOpenApi();
 
-app.MapPost("/person", async (AppDbContext db, Person input) =>
+app.MapPost("/employee", async (AppDbContext db, Employee input) =>
     {
-        var person = new Person
+        var employee = new Employee
         {
-            Name = input.Name,
+            FirstName = input.FirstName,
+            LastName = input.LastName,
             Age = input.Age
         };
-        db.Add(person);
+        db.Add(employee);
         await db.SaveChangesAsync();
         
-        return person;
+        return employee;
     })
-    .WithName("PostPersons")
+    .WithName("PostEmployees")
     .WithOpenApi();
 
 app.Run();
