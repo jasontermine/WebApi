@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
@@ -36,7 +35,7 @@ public class EmployeeController : ControllerBase
         }));
     }
 
-    [HttpGet("/{id}")]
+    [HttpGet("{id}", Name = "GetEmployee")]
     public async Task<ActionResult<Employee>> GetEmployee(Guid id)
     {
         var employee = await _context.Employees.FindAsync(id);
@@ -49,10 +48,18 @@ public class EmployeeController : ControllerBase
         return employee;
     }
 
+
     [HttpPost]
-    public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+    public async Task<ActionResult<Employee>> PostEmployee(EmployeeRequestDto employeeRequestDto)
     {
-        employee.uuid = Guid.NewGuid();
+        var employee = new Employee
+        {
+            uuid = Guid.NewGuid(),
+            FirstName = employeeRequestDto.FirstName,
+            LastName = employeeRequestDto.LastName,
+            Age = employeeRequestDto.Age
+        };
+
         _context.Employees.Add(employee);
         await _context.SaveChangesAsync();
 
