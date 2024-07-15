@@ -5,7 +5,7 @@ using WebApi.Models;
 
 namespace WebApi.Controllers;
 
-[Route("/[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class EmployeeController : ControllerBase
 {
