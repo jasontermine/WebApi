@@ -9,9 +9,7 @@ namespace WebApi.Models
     {
         [Key]    
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
-        public Guid uuid { get; set; }
-        
+        public int Id { get; set; }
         [Required]
         [ForeignKey("Employee")]
         public Guid EmployeeUuid { get; set; }
@@ -28,6 +26,9 @@ namespace WebApi.Models
 
         [Required]
         [Range(0, 999.99)]
-        public float HoursWorked { get; set; } 
+        public float HoursWorked { get; set; }
+
+        [Required]
+        public DateTime RecordedAt { get; set; }
     }
 }

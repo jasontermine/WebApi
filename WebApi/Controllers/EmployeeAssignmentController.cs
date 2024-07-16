@@ -21,22 +21,18 @@ namespace WebApi.Controllers
         {
             var employeeAssignments = await _context.EmployeeAssignments.ToListAsync();
 
-            if (employeeAssignments == null)
-            {
-                return NotFound();
-            }
-
             return Ok(employeeAssignments.Select(p => new
             {
-                uuid = p.uuid,
+                Id = p.Id,
                 EmployeeUuid = p.EmployeeUuid,
                 AssignmentUuid = p.AssignmentUuid,
-                HoursWorked = p.HoursWorked
+                HoursWorked = p.HoursWorked,
+                RecordedAt = p.RecordedAt
             }));
         }
 
         [HttpGet("{id}", Name = "GetEmployeeAssignmentById")]
-        public async Task<ActionResult<EmployeeAssignment>> GetEmployeeAssignment(Guid id)
+        public async Task<ActionResult<EmployeeAssignment>> GetEmployeeAssignment(int id)
         {
             var employeeAssignment = await _context.EmployeeAssignments.FindAsync(id);
 
@@ -53,22 +49,22 @@ namespace WebApi.Controllers
         {
             var employeeAssignment = new EmployeeAssignment
             {
-                uuid = Guid.NewGuid(),
                 EmployeeUuid = employeeAssignmentDto.EmployeeUuid,
                 AssignmentUuid = employeeAssignmentDto.AssignmentUuid,
-                HoursWorked = employeeAssignmentDto.HoursWorked
+                HoursWorked = employeeAssignmentDto.HoursWorked,
+                RecordedAt = DateTime.UtcNow
             };
 
             _context.EmployeeAssignments.Add(employeeAssignment);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetEmployeeAssignment), new { id = employeeAssignment.uuid }, employeeAssignment);
+            return CreatedAtAction(nameof(GetEmployeeAssignment), new { id = employeeAssignment.Id }, employeeAssignment);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployeeAssignment(Guid id, EmployeeAssignment employeeAssignment)
+        public async Task<IActionResult> PutEmployeeAssignment(int id, EmployeeAssignment employeeAssignment)
         {
-            if (id != employeeAssignment.uuid)
+            if (id != employeeAssignment.Id)
             {
                 return BadRequest();
             }
@@ -95,7 +91,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEmployeeAssignment(Guid id)
+        public async Task<IActionResult> DeleteEmployeeAssignment(int id)
         {
             var employeeAssignment = await _context.EmployeeAssignments.FindAsync(id);
             if (employeeAssignment == null)
@@ -109,9 +105,9 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
-        private bool EmployeeAssignmentExists(Guid id)
+        private bool EmployeeAssignmentExists(int id)
         {
-            return _context.EmployeeAssignments.Any(e => e.uuid == id);
+            return _context.EmployeeAssignments.Any(e => e.Id == id);
         }
     }
 }
