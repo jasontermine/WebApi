@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace WebApi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class UpdateEmployeeAssignment : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -43,14 +44,16 @@ namespace WebApi.Migrations
                 name: "EmployeeAssignments",
                 columns: table => new
                 {
-                    uuid = table.Column<Guid>(type: "uuid", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     EmployeeUuid = table.Column<Guid>(type: "uuid", nullable: false),
                     AssignmentUuid = table.Column<Guid>(type: "uuid", nullable: false),
-                    HoursWorked = table.Column<float>(type: "real", nullable: false)
+                    HoursWorked = table.Column<float>(type: "real", nullable: false),
+                    RecordedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeeAssignments", x => x.uuid);
+                    table.PrimaryKey("PK_EmployeeAssignments", x => x.Id);
                     table.ForeignKey(
                         name: "FK_EmployeeAssignments_Assignments_AssignmentUuid",
                         column: x => x.AssignmentUuid,

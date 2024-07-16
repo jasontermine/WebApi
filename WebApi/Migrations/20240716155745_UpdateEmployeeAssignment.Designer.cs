@@ -12,8 +12,8 @@ using WebApi.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240714075640_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240716155745_UpdateEmployeeAssignment")]
+    partial class UpdateEmployeeAssignment
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,9 +70,11 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("WebApi.Models.EmployeeAssignment", b =>
                 {
-                    b.Property<Guid>("uuid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<Guid>("AssignmentUuid")
                         .HasColumnType("uuid");
@@ -83,7 +85,10 @@ namespace WebApi.Migrations
                     b.Property<float>("HoursWorked")
                         .HasColumnType("real");
 
-                    b.HasKey("uuid");
+                    b.Property<DateTime>("RecordedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("AssignmentUuid");
 
