@@ -14,7 +14,6 @@ namespace WebApi.Models
         [Range(0, 999.99)]
         public float HoursWorked { get; set; }
 
-        [Required]
         public DateTime RecordedAt { get; set; }
     }
 }
