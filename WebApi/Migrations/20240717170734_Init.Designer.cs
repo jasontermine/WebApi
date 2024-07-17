@@ -12,8 +12,8 @@ using WebApi.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240716155745_UpdateEmployeeAssignment")]
-    partial class UpdateEmployeeAssignment
+    [Migration("20240717170734_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
