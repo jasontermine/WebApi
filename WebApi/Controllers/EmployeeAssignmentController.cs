@@ -62,14 +62,23 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployeeAssignment(int id, EmployeeAssignment employeeAssignment)
+        public async Task<IActionResult> PutEmployeeAssignment(int id, EmployeeAssignmentRequestDto employeeAssignmentDto)
         {
-            if (id != employeeAssignment.Id)
+            var existingAssignment = await _context.EmployeeAssignments.FindAsync(id);
+            if (existingAssignment == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(employeeAssignment).State = EntityState.Modified;
+            existingAssignment.EmployeeUuid = employeeAssignmentDto.EmployeeUuid;
+            existingAssignment.AssignmentUuid = employeeAssignmentDto.AssignmentUuid;
+            existingAssignment.HoursWorked = employeeAssignmentDto.HoursWorked;
+            if (employeeAssignmentDto.RecordedAt != default)
+            {
+                existingAssignment.RecordedAt = employeeAssignmentDto.RecordedAt;
+            }
+
+            _context.Entry(existingAssignment).State = EntityState.Modified;
 
             try
             {
