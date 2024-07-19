@@ -75,10 +75,9 @@ namespace WebApi.Migrations
                 columns: new[] { "uuid", "Name", "dueDate", "startDate" },
                 values: new object[,]
                 {
-                    { new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"), "Project Alpha", new DateTime(2024, 6, 30, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
-                    { new Guid("235bb79d-0342-406e-acf0-4b028bdf8c5e"), "Project Beta", new DateTime(2024, 12, 31, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
-                    { new Guid("a229202f-35a9-4592-a096-9df65f1e5ca2"), "Project Delta", new DateTime(2025, 2, 28, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
-                    { new Guid("f59dffff-6678-4b33-802b-615268c53a1e"), "Project Gamma", new DateTime(2024, 8, 31, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Utc) }
+                    { new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"), "Murtenstrasse 5", new DateTime(2024, 6, 30, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
+                    { new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"), "Schanzenweg 8", new DateTime(2024, 12, 31, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc) },
+                    { new Guid("f2861230-88c0-4677-a7ca-96197ec62344"), "Könizstrasse 12", new DateTime(2024, 8, 31, 23, 59, 59, 0, DateTimeKind.Utc), new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Utc) }
                 });
 
             migrationBuilder.InsertData(
@@ -86,10 +85,16 @@ namespace WebApi.Migrations
                 columns: new[] { "uuid", "Age", "FirstName", "LastName" },
                 values: new object[,]
                 {
-                    { new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"), 30, "John", "Doe" },
-                    { new Guid("ba25013a-7c4a-46ca-8ea6-b025f5377f52"), 25, "Anna", "Karelia" },
-                    { new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"), 40, "Michael", "Smith" },
-                    { new Guid("d6072945-4cb9-42fd-86de-b3b1e9059985"), 35, "Emily", "Jones" }
+                    { new Guid("075820e6-e72d-464b-bd3f-78f006e8adea"), 27, "Sophia", "Davis" },
+                    { new Guid("3abb9fc0-4343-4426-bdc1-d2c103914df3"), 29, "James", "Brown" },
+                    { new Guid("4d9b98ea-a12b-4b59-a230-682346c34d7b"), 28, "William", "Williams" },
+                    { new Guid("57be1f8f-f483-423f-9821-2b380fc3ab45"), 30, "John", "Doe" },
+                    { new Guid("5fc099aa-42cc-412a-a8d3-a06914a9e7d1"), 40, "Michael", "Smith" },
+                    { new Guid("ace76463-1fad-4d80-b083-e00b0fe04eac"), 31, "Liam", "Miller" },
+                    { new Guid("adc24da7-6fdb-4aa0-8551-87b453afb62f"), 32, "Olivia", "Johnson" },
+                    { new Guid("bc134cd6-9f96-4cb0-b053-f3ca56160f1f"), 25, "Anna", "Karelia" },
+                    { new Guid("cc6b6b10-12ef-41b5-ad18-72e5fb671714"), 35, "Emily", "Jones" },
+                    { new Guid("d29c17f5-6232-4042-8d5f-7c8994711a8b"), 26, "Ava", "Wilson" }
                 });
 
             migrationBuilder.InsertData(
@@ -97,12 +102,16 @@ namespace WebApi.Migrations
                 columns: new[] { "Id", "AssignmentUuid", "EmployeeUuid", "HoursWorked", "RecordedAt" },
                 values: new object[,]
                 {
-                    { 1, new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"), new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"), 40f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, new Guid("235bb79d-0342-406e-acf0-4b028bdf8c5e"), new Guid("ba25013a-7c4a-46ca-8ea6-b025f5377f52"), 20f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, new Guid("f59dffff-6678-4b33-802b-615268c53a1e"), new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"), 30f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, new Guid("a229202f-35a9-4592-a096-9df65f1e5ca2"), new Guid("d6072945-4cb9-42fd-86de-b3b1e9059985"), 25f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 5, new Guid("f59dffff-6678-4b33-802b-615268c53a1e"), new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"), 15f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 6, new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"), new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"), 35f, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"), new Guid("57be1f8f-f483-423f-9821-2b380fc3ab45"), 40f, new DateTime(2024, 1, 15, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 2, new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"), new Guid("bc134cd6-9f96-4cb0-b053-f3ca56160f1f"), 35f, new DateTime(2024, 1, 16, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 3, new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"), new Guid("5fc099aa-42cc-412a-a8d3-a06914a9e7d1"), 30f, new DateTime(2024, 1, 17, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 4, new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"), new Guid("cc6b6b10-12ef-41b5-ad18-72e5fb671714"), 45f, new DateTime(2024, 7, 10, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 5, new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"), new Guid("3abb9fc0-4343-4426-bdc1-d2c103914df3"), 50f, new DateTime(2024, 7, 15, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 6, new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"), new Guid("adc24da7-6fdb-4aa0-8551-87b453afb62f"), 20f, new DateTime(2024, 7, 20, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 7, new Guid("f2861230-88c0-4677-a7ca-96197ec62344"), new Guid("4d9b98ea-a12b-4b59-a230-682346c34d7b"), 25f, new DateTime(2024, 3, 15, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 8, new Guid("f2861230-88c0-4677-a7ca-96197ec62344"), new Guid("075820e6-e72d-464b-bd3f-78f006e8adea"), 30f, new DateTime(2024, 3, 20, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 9, new Guid("f2861230-88c0-4677-a7ca-96197ec62344"), new Guid("ace76463-1fad-4d80-b083-e00b0fe04eac"), 40f, new DateTime(2024, 3, 25, 12, 0, 0, 0, DateTimeKind.Utc) },
+                    { 10, new Guid("f2861230-88c0-4677-a7ca-96197ec62344"), new Guid("d29c17f5-6232-4042-8d5f-7c8994711a8b"), 15f, new DateTime(2024, 3, 30, 12, 0, 0, 0, DateTimeKind.Utc) }
                 });
 
             migrationBuilder.CreateIndex(

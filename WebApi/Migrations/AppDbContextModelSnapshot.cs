@@ -45,31 +45,24 @@ namespace WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            uuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
+                            uuid = new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"),
                             Name = "Murtenstrasse 5",
                             dueDate = new DateTime(2024, 6, 30, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
-                            uuid = new Guid("049ac3bf-51c2-4143-b466-faa835a66817"),
+                            uuid = new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"),
                             Name = "Schanzenweg 8",
                             dueDate = new DateTime(2024, 12, 31, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
-                            uuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
+                            uuid = new Guid("f2861230-88c0-4677-a7ca-96197ec62344"),
                             Name = "Könizstrasse 12",
                             dueDate = new DateTime(2024, 8, 31, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            uuid = new Guid("816474b0-ea46-4e44-a485-918f820f0df0"),
-                            Name = "Rheinstrasse 3",
-                            dueDate = new DateTime(2025, 2, 28, 23, 59, 59, 0, DateTimeKind.Utc),
-                            startDate = new DateTime(2024, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         });
                 });
 
@@ -97,31 +90,73 @@ namespace WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            uuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
+                            uuid = new Guid("57be1f8f-f483-423f-9821-2b380fc3ab45"),
                             Age = 30,
                             FirstName = "John",
                             LastName = "Doe"
                         },
                         new
                         {
-                            uuid = new Guid("7476f099-3f5c-4de2-90e2-e0fc1a94f4fe"),
+                            uuid = new Guid("bc134cd6-9f96-4cb0-b053-f3ca56160f1f"),
                             Age = 25,
                             FirstName = "Anna",
                             LastName = "Karelia"
                         },
                         new
                         {
-                            uuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
+                            uuid = new Guid("5fc099aa-42cc-412a-a8d3-a06914a9e7d1"),
                             Age = 40,
                             FirstName = "Michael",
                             LastName = "Smith"
                         },
                         new
                         {
-                            uuid = new Guid("7c3c762e-f351-482d-b0c8-87027fa7c163"),
+                            uuid = new Guid("cc6b6b10-12ef-41b5-ad18-72e5fb671714"),
                             Age = 35,
                             FirstName = "Emily",
                             LastName = "Jones"
+                        },
+                        new
+                        {
+                            uuid = new Guid("3abb9fc0-4343-4426-bdc1-d2c103914df3"),
+                            Age = 29,
+                            FirstName = "James",
+                            LastName = "Brown"
+                        },
+                        new
+                        {
+                            uuid = new Guid("adc24da7-6fdb-4aa0-8551-87b453afb62f"),
+                            Age = 32,
+                            FirstName = "Olivia",
+                            LastName = "Johnson"
+                        },
+                        new
+                        {
+                            uuid = new Guid("4d9b98ea-a12b-4b59-a230-682346c34d7b"),
+                            Age = 28,
+                            FirstName = "William",
+                            LastName = "Williams"
+                        },
+                        new
+                        {
+                            uuid = new Guid("075820e6-e72d-464b-bd3f-78f006e8adea"),
+                            Age = 27,
+                            FirstName = "Sophia",
+                            LastName = "Davis"
+                        },
+                        new
+                        {
+                            uuid = new Guid("ace76463-1fad-4d80-b083-e00b0fe04eac"),
+                            Age = 31,
+                            FirstName = "Liam",
+                            LastName = "Miller"
+                        },
+                        new
+                        {
+                            uuid = new Guid("d29c17f5-6232-4042-8d5f-7c8994711a8b"),
+                            Age = 26,
+                            FirstName = "Ava",
+                            LastName = "Wilson"
                         });
                 });
 
@@ -157,50 +192,82 @@ namespace WebApi.Migrations
                         new
                         {
                             Id = 1,
-                            AssignmentUuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
-                            EmployeeUuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
+                            AssignmentUuid = new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"),
+                            EmployeeUuid = new Guid("57be1f8f-f483-423f-9821-2b380fc3ab45"),
                             HoursWorked = 40f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            RecordedAt = new DateTime(2024, 1, 15, 12, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = 2,
-                            AssignmentUuid = new Guid("049ac3bf-51c2-4143-b466-faa835a66817"),
-                            EmployeeUuid = new Guid("7476f099-3f5c-4de2-90e2-e0fc1a94f4fe"),
-                            HoursWorked = 20f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            AssignmentUuid = new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"),
+                            EmployeeUuid = new Guid("bc134cd6-9f96-4cb0-b053-f3ca56160f1f"),
+                            HoursWorked = 35f,
+                            RecordedAt = new DateTime(2024, 1, 16, 12, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = 3,
-                            AssignmentUuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
-                            EmployeeUuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
+                            AssignmentUuid = new Guid("119c7f18-bb17-4eaa-99ac-272916db5b43"),
+                            EmployeeUuid = new Guid("5fc099aa-42cc-412a-a8d3-a06914a9e7d1"),
                             HoursWorked = 30f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            RecordedAt = new DateTime(2024, 1, 17, 12, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = 4,
-                            AssignmentUuid = new Guid("816474b0-ea46-4e44-a485-918f820f0df0"),
-                            EmployeeUuid = new Guid("7c3c762e-f351-482d-b0c8-87027fa7c163"),
-                            HoursWorked = 25f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            AssignmentUuid = new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"),
+                            EmployeeUuid = new Guid("cc6b6b10-12ef-41b5-ad18-72e5fb671714"),
+                            HoursWorked = 45f,
+                            RecordedAt = new DateTime(2024, 7, 10, 12, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = 5,
-                            AssignmentUuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
-                            EmployeeUuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
-                            HoursWorked = 15f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            AssignmentUuid = new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"),
+                            EmployeeUuid = new Guid("3abb9fc0-4343-4426-bdc1-d2c103914df3"),
+                            HoursWorked = 50f,
+                            RecordedAt = new DateTime(2024, 7, 15, 12, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = 6,
-                            AssignmentUuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
-                            EmployeeUuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
-                            HoursWorked = 35f,
-                            RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            AssignmentUuid = new Guid("19eebcc1-0d83-4ee7-af6e-8f2aa539311f"),
+                            EmployeeUuid = new Guid("adc24da7-6fdb-4aa0-8551-87b453afb62f"),
+                            HoursWorked = 20f,
+                            RecordedAt = new DateTime(2024, 7, 20, 12, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AssignmentUuid = new Guid("f2861230-88c0-4677-a7ca-96197ec62344"),
+                            EmployeeUuid = new Guid("4d9b98ea-a12b-4b59-a230-682346c34d7b"),
+                            HoursWorked = 25f,
+                            RecordedAt = new DateTime(2024, 3, 15, 12, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AssignmentUuid = new Guid("f2861230-88c0-4677-a7ca-96197ec62344"),
+                            EmployeeUuid = new Guid("075820e6-e72d-464b-bd3f-78f006e8adea"),
+                            HoursWorked = 30f,
+                            RecordedAt = new DateTime(2024, 3, 20, 12, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AssignmentUuid = new Guid("f2861230-88c0-4677-a7ca-96197ec62344"),
+                            EmployeeUuid = new Guid("ace76463-1fad-4d80-b083-e00b0fe04eac"),
+                            HoursWorked = 40f,
+                            RecordedAt = new DateTime(2024, 3, 25, 12, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AssignmentUuid = new Guid("f2861230-88c0-4677-a7ca-96197ec62344"),
+                            EmployeeUuid = new Guid("d29c17f5-6232-4042-8d5f-7c8994711a8b"),
+                            HoursWorked = 15f,
+                            RecordedAt = new DateTime(2024, 3, 30, 12, 0, 0, 0, DateTimeKind.Utc)
                         });
                 });
 
