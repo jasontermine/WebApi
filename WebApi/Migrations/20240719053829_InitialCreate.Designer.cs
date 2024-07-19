@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApi.Data;
@@ -11,9 +12,11 @@ using WebApi.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240719053829_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,29 +48,29 @@ namespace WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            uuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
-                            Name = "Murtenstrasse 5",
+                            uuid = new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"),
+                            Name = "Project Alpha",
                             dueDate = new DateTime(2024, 6, 30, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
-                            uuid = new Guid("049ac3bf-51c2-4143-b466-faa835a66817"),
-                            Name = "Schanzenweg 8",
+                            uuid = new Guid("235bb79d-0342-406e-acf0-4b028bdf8c5e"),
+                            Name = "Project Beta",
                             dueDate = new DateTime(2024, 12, 31, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
-                            uuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
-                            Name = "Könizstrasse 12",
+                            uuid = new Guid("f59dffff-6678-4b33-802b-615268c53a1e"),
+                            Name = "Project Gamma",
                             dueDate = new DateTime(2024, 8, 31, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
-                            uuid = new Guid("816474b0-ea46-4e44-a485-918f820f0df0"),
-                            Name = "Rheinstrasse 3",
+                            uuid = new Guid("a229202f-35a9-4592-a096-9df65f1e5ca2"),
+                            Name = "Project Delta",
                             dueDate = new DateTime(2025, 2, 28, 23, 59, 59, 0, DateTimeKind.Utc),
                             startDate = new DateTime(2024, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc)
                         });
@@ -97,28 +100,28 @@ namespace WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            uuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
+                            uuid = new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"),
                             Age = 30,
                             FirstName = "John",
                             LastName = "Doe"
                         },
                         new
                         {
-                            uuid = new Guid("7476f099-3f5c-4de2-90e2-e0fc1a94f4fe"),
+                            uuid = new Guid("ba25013a-7c4a-46ca-8ea6-b025f5377f52"),
                             Age = 25,
                             FirstName = "Anna",
                             LastName = "Karelia"
                         },
                         new
                         {
-                            uuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
+                            uuid = new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"),
                             Age = 40,
                             FirstName = "Michael",
                             LastName = "Smith"
                         },
                         new
                         {
-                            uuid = new Guid("7c3c762e-f351-482d-b0c8-87027fa7c163"),
+                            uuid = new Guid("d6072945-4cb9-42fd-86de-b3b1e9059985"),
                             Age = 35,
                             FirstName = "Emily",
                             LastName = "Jones"
@@ -157,48 +160,48 @@ namespace WebApi.Migrations
                         new
                         {
                             Id = 1,
-                            AssignmentUuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
-                            EmployeeUuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
+                            AssignmentUuid = new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"),
+                            EmployeeUuid = new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"),
                             HoursWorked = 40f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            AssignmentUuid = new Guid("049ac3bf-51c2-4143-b466-faa835a66817"),
-                            EmployeeUuid = new Guid("7476f099-3f5c-4de2-90e2-e0fc1a94f4fe"),
+                            AssignmentUuid = new Guid("235bb79d-0342-406e-acf0-4b028bdf8c5e"),
+                            EmployeeUuid = new Guid("ba25013a-7c4a-46ca-8ea6-b025f5377f52"),
                             HoursWorked = 20f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            AssignmentUuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
-                            EmployeeUuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
+                            AssignmentUuid = new Guid("f59dffff-6678-4b33-802b-615268c53a1e"),
+                            EmployeeUuid = new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"),
                             HoursWorked = 30f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
-                            AssignmentUuid = new Guid("816474b0-ea46-4e44-a485-918f820f0df0"),
-                            EmployeeUuid = new Guid("7c3c762e-f351-482d-b0c8-87027fa7c163"),
+                            AssignmentUuid = new Guid("a229202f-35a9-4592-a096-9df65f1e5ca2"),
+                            EmployeeUuid = new Guid("d6072945-4cb9-42fd-86de-b3b1e9059985"),
                             HoursWorked = 25f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
-                            AssignmentUuid = new Guid("fec3e824-27f2-4b86-98f2-de1ee44b6608"),
-                            EmployeeUuid = new Guid("8031b974-8e11-43e4-8587-c419946c648f"),
+                            AssignmentUuid = new Guid("f59dffff-6678-4b33-802b-615268c53a1e"),
+                            EmployeeUuid = new Guid("b6821df7-0c8d-47f8-aafe-4e20983a50e1"),
                             HoursWorked = 15f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
-                            AssignmentUuid = new Guid("da2dc0cf-c3b2-49cc-a6ad-90ebf084c20f"),
-                            EmployeeUuid = new Guid("0fb4af0b-710b-43ca-94d3-41968ebd7136"),
+                            AssignmentUuid = new Guid("0c212166-0eea-4e3a-b1d9-3b116e0a505a"),
+                            EmployeeUuid = new Guid("c62d8880-c8e0-476b-8fc1-1a59fffe7124"),
                             HoursWorked = 35f,
                             RecordedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
